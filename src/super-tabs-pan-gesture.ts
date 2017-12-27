@@ -77,12 +77,12 @@ export class SuperTabsPanGesture {
     if (!this.isDragging) {
 
       if (typeof this.shouldCapture !== 'boolean')
-      // we haven't decided yet if we want to capture this gesture
+        // we haven't decided yet if we want to capture this gesture
         this.checkGesture(coords);
 
 
       if (this.shouldCapture === true)
-      // gesture is good, let's capture all next onTouchMove events
+        // gesture is good, let's capture all next onTouchMove events
         this.isDragging = true;
       else
         return;
@@ -90,8 +90,8 @@ export class SuperTabsPanGesture {
     }
 
     // stop anything else from capturing these events, to make sure the content doesn't slide
-    ev.stopPropagation();
-    ev.preventDefault();
+    // ev.stopPropagation();
+    // ev.preventDefault();
 
     // get delta X
     const deltaX: number = this.lastPosX - coords.x;
